@@ -6,16 +6,16 @@ This project focuses on correcting the FLORES evaluation dataset (dev and devtes
 
 In this project, native speakers meticulously reviewed and corrected the dataset to ensure improved accuracy and reliability for each language. Our goal was to enhance the integrity of downstream NLP tasks that use this data.
 
-### Key Corrections:
-- **Hausa**
-- **Northern Sotho (Sepedi)**
-- **Xitsonga**
-- **isiZulu**
-
 ### What We Did:
 1. **Reviewed and Corrected Errors**: Identified and implemented corrections to translation inconsistencies and inaccuracies in the dataset.
 2. **Statistical Analysis**: Conducted statistical comparisons between the original and corrected datasets, highlighting the differences and improvements made.
 3. **Improved Dataset Quality**: Enhanced linguistic accuracy and reliability, ensuring more effective evaluation of NLP tasks involving these languages.
+
+### Key Corrections:
+- **Hausa**: The Hausa translations revealed numerous inconsistencies, suggesting a significant portion may have been automatically generated, particularly due to unclear or incoherent phrasing. Comparisons with the Hausa FLORES dataset and Google Translate showed that many lexical choices were incorrect and aligned with Google’s outputs, raising concerns about the quality of the original translations. Additional issues included improper translations of named entities and the frequent omission of special characters in standardized Hausa alphabets.
+- **Northern Sotho (Sepedi)**: The translations in Northern Sotho displayed a need for improvement in vocabulary consistency, syntax, and the accurate conveyance of technical terms. While most text was accurately translated, minor corrections were necessary to enhance clarity, including adjustments for borrowed words and proper spacing. Notably, some translations omitted important terms, affecting the overall meaning, such as leaving out “scientific” when referring to tools.
+- **Xitsonga**: In Xitsonga translations, several vocabulary accuracy issues and improper use of borrowed terms were identified, leading to misunderstandings. Errors included incorrect translations for phrases like "Type 1 diabetes" and uniform translations lacking contextual variation, which hindered clarity. Spelling errors and the inappropriate borrowing of terms significantly impacted translation quality, underscoring the need for proper native language usage.
+- **isiZulu**: IsiZulu translations faced challenges with vocabulary inconsistencies, syntax errors, and issues in expressing technical terms, compounded by the language's agglutinative structure. Key problems included incorrect grammatical structures for time expressions and the unnecessary borrowing of English terms, which disrupted linguistic flow. Efforts to standardize terminology throughout the translations were made to ensure grammatical accuracy and clarity.
 
 ### Evaluating the Corrections:
 
@@ -105,16 +105,7 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
 </table>
 
-**Table:** Data statistics; \# corr. (\%) → number of sentences requiring at least one correction (percentage of original data); \# tokens$_o$ → original token count; \# tokens$_c$ → corrected token count; $\Delta$ tokens → token count difference; \% div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
-
-| lang. | dev                                        | devtest                                    |
-|-------|--------------------------------------------|--------------------------------------------|
-|       | TER Score  | TER # Edits | BLEU   | COMET  | TER Score  | TER # Edits | BLEU   | COMET  |
-|-------|------------|-------------|--------|--------|------------|-------------|--------|--------|
-| `hau` | 19.6       | 2,702       | 71.4   | 80.4   | -          | -           | -      | -      |
-| `nso` | 24.2       | 465         | 66.5   | 73.4   | 24.0       | 392         | 67.7   | 73.5   |
-| `tso` | -          | -           | -      | -      | 28.5       | 541         | 64.8   | 72.9   |
-| `zul` | 30.0       | 909         | 67.6   | 74.7   | 23.5       | 879         | 70.8   | 75.8   |
+**Table:** Data statistics; # corr. (%) → number of sentences requiring at least one correction (percentage of original data); # tokens<sub>o</sub> → original token count; # tokens<sub>c</sub> → corrected token count; &Delta; tokens → token count difference; % div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
 
 <table>
   <tr>
@@ -196,7 +187,7 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
 </table>
 
-**Table:** Similarities between the original and corrected FLORES evaluation data on the four African languages -- original as predictions; corrected as reference translations.
+**Table:** Similarities between the original and corrected FLORES evaluation data on the four African languages - original as predictions; corrected as reference translations.
 
 ## How to Use
 
@@ -218,11 +209,14 @@ Special thanks to the native speaker annotators—university students and resear
 If you use these corrections in your research, please cite our paper:
 
 ```
-@inproceedings{yourcitation,
-  title={Correcting the FLORES Evaluation Dataset for African Languages},
-  author={Your name},
-  booktitle={Proceedings of the Ninth Conference on Machine Translation (WMT24)},
-  year={2024}
+@misc{abdulmumin2024correctingfloresevaluationdataset,
+  title={Correcting FLORES Evaluation Dataset for Four African Languages}, 
+  author={Idris Abdulmumin and Sthembiso Mkhwanazi and Mahlatse S. Mbooi and Shamsuddeen Hassan Muhammad and Ibrahim Said Ahmad and Neo Putini and Miehleketo Mathebula and Matimba Shingange and Tajuddeen Gwadabe and Vukosi Marivate},
+  year={2024},
+  eprint={2409.00626},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2409.00626}, 
 }
 ```
 
