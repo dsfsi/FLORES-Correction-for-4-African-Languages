@@ -34,16 +34,16 @@ In this project, native speakers meticulously reviewed and corrected the dataset
     </td>
   </tr>
   <tr>
-    <td># corr. (%)</td>
-    <td># tokens<sub>o</sub></td>
-    <td># tokens<sub>c</sub></td>
+    <td>#corr. (%)</td>
+    <td>#tokens<sub>o</sub></td>
+    <td>#tokens<sub>c</sub></td>
     <td>&Delta; tokens</td>
     <td>% div.</td>
     <td>
     </td>
-    <td># corr. (%)</td>
-    <td># tokens<sub>o</sub></td>
-    <td># tokens<sub>c</sub></td>
+    <td>#corr. (%)</td>
+    <td>#tokens<sub>o</sub></td>
+    <td>#tokens<sub>c</sub></td>
     <td>&Delta; tokens</td>
     <td>% div.</td>
   </tr>
@@ -105,7 +105,7 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
 </table>
 
-**Table:** Data statistics; # corr. (%) → number of sentences requiring at least one correction (percentage of original data); # tokens<sub>o</sub> → original token count; # tokens<sub>c</sub> → corrected token count; &Delta; tokens → token count difference; % div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
+**Table:** Data statistics; #corr. (%) → number of sentences requiring at least one correction (percentage of original data); #tokens<sub>o</sub> → original token count; #tokens<sub>c</sub> → corrected token count; &Delta; tokens → token count difference; % div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
 
 <table>
   <tr>
@@ -132,10 +132,10 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
   <tr>
     <td>Score</td>
-    <td># Edits</td>
+    <td>#Edits</td>
     <td></td>
     <td>Score</td>
-    <td># Edits</td>
+    <td>#Edits</td>
   </tr>
   <tr>
     <td>hau</td>
