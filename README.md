@@ -19,13 +19,91 @@ In this project, native speakers meticulously reviewed and corrected the dataset
 
 ### Evaluating the Corrections:
 
-| lang         | # corr. (\%) | # tokens$_o$ | # tokens$_c$ | $\Delta$ tokens | % div. | # corr. (\%) | \# tokens$_o$ | \# tokens$_c$ | $\Delta$ tokens | \% div. |
-|--------------|---------------|---------------|---------------|-----------------|----------|---------------|---------------|---------------|-----------------|----------|
-|              | **dev (997 sentences)**       |             |               |               |                 | **devtest (1,012 sentences)**    |               |               |               |                 |
-| \texttt{hau*}  | 538 (54.0)    | 15,336        | 15,239        | 97             | 24.3     | -             | -             | -             | -               | -        |
-| \texttt{nso*}  | 62 (6.2)      | 2,073         | 2,130         | 57             | 29.8     | 53 (5.2)      | 1,780         | 1,819         | 39              | 30.5     |
-| \texttt{tso*}  | -             | -             | -             | -              | -        | 61 (6.0)      | 2,127         | 2,161         | 34              | 35.7     |
-| \texttt{zul}   | 192 (19.3)    | 3,967         | 3,583         | 384            | 25.7     | 227 (22.4)    | 4,430         | 4,423         | 7               | 30.4     |
+<table>
+  <tr>
+    <td rowspan="2">
+      lang.
+    </td>
+    <td colspan="5">
+      dev (997 sentences)
+    </td>
+    <td>
+    </td>
+    <td colspan="5">
+      devtest (1,012 sentences)
+    </td>
+  </tr>
+  <tr>
+    <td># corr. (%)</td>
+    <td># tokens<sub>o</sub></td>
+    <td># tokens<sub>c</sub></td>
+    <td>&Delta; tokens</td>
+    <td>% div.</td>
+    <td>
+    </td>
+    <td># corr. (%)</td>
+    <td># tokens<sub>o</sub></td>
+    <td># tokens<sub>c</sub></td>
+    <td>&Delta; tokens</td>
+    <td>% div.</td>
+  </tr>
+  <tr>
+    <td>hau</td>
+    <td>538 (54.0)</td>
+    <td>15,336</td>
+    <td>15,239</td>
+    <td>97</td>
+    <td>24.3</td>
+    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>nso</td>
+    <td>62 (6.2)</td>
+    <td>2,073</td>
+    <td>2,130</td>
+    <td>57</td>
+    <td>29.8</td>
+    <td></td>
+    <td>53 (5.2)</td>
+    <td>1,780</td>
+    <td>1,819</td>
+    <td>39</td>
+    <td>30.5</td>
+  </tr>
+  <tr>
+    <td>tso</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+    <td>61 (6.0)</td>
+    <td>2,127</td>
+    <td>2,161</td>
+    <td>34</td>
+    <td>35.7</td>
+  </tr>
+  <tr>
+    <td>zul</td>
+    <td>192 (19.3)</td>
+    <td>3,967</td>
+    <td>3,583</td>
+    <td>384</td>
+    <td>25.7</td>
+    <td></td>
+    <td>227 (22.4)</td>
+    <td>4,430</td>
+    <td>4,423</td>
+    <td>7</td>
+    <td>30.4</td>
+  </tr>
+</table>
 
 **Table:** Data statistics; \# corr. (\%) → number of sentences requiring at least one correction (percentage of original data); \# tokens$_o$ → original token count; \# tokens$_c$ → corrected token count; $\Delta$ tokens → token count difference; \% div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
 
@@ -37,6 +115,86 @@ In this project, native speakers meticulously reviewed and corrected the dataset
 | `nso` | 24.2       | 465         | 66.5   | 73.4   | 24.0       | 392         | 67.7   | 73.5   |
 | `tso` | -          | -           | -      | -      | 28.5       | 541         | 64.8   | 72.9   |
 | `zul` | 30.0       | 909         | 67.6   | 74.7   | 23.5       | 879         | 70.8   | 75.8   |
+
+<table>
+  <tr>
+    <td rowspan="3">
+      lang.
+    </td>
+    <td colspan="4">
+      dev
+    </td>
+    <td>
+    </td>
+    <td colspan="4">
+      devtest
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">TER</td>
+    <td rowspan="2">BLEU</td>
+    <td rowspan="2">COMET</td>
+    <td></td>
+    <td colspan="2">TER</td>
+    <td rowspan="2">BLEU</td>
+    <td rowspan="2">COMET</td>
+  </tr>
+  <tr>
+    <td>Score</td>
+    <td># Edits</td>
+    <td></td>
+    <td>Score</td>
+    <td># Edits</td>
+  </tr>
+  <tr>
+    <td>hau</td>
+    <td>19.6</td>
+    <td>2,702</td>
+    <td>71.4</td>
+    <td>80.4</td>
+    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>nso</td>
+    <td>24.2</td>
+    <td>465</td>
+    <td>66.5</td>
+    <td>73.4</td>
+    <td></td>
+    <td>24.0</td>
+    <td>392</td>
+    <td>67.7</td>
+    <td>73.5</td>
+  </tr>
+  <tr>
+    <td>tso</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+    <td>28.5</td>
+    <td>541</td>
+    <td>64.8</td>
+    <td>72.9</td>
+  </tr>
+  <tr>
+    <td>zul</td>
+    <td>30.0</td>
+    <td>909</td>
+    <td>67.6</td>
+    <td>74.7</td>
+    <td></td>
+    <td>23.5</td>
+    <td>879</td>
+    <td>70.8</td>
+    <td>75.8</td>
+  </tr>
+</table>
 
 **Table:** Similarities between the original and corrected FLORES evaluation data on the four African languages -- original as predictions; corrected as reference translations.
 
