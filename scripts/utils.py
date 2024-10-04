@@ -1,11 +1,21 @@
 import evaluate
 
-import nltk
 from nltk import word_tokenize
 
 bleu = evaluate.load("bleu")
 ter = evaluate.load('ter')
-nltk.download('punkt')
+
+def get_different_sentences(lines1, lines2):
+  diff_sents = []
+
+  if len(lines1) != len(lines2):
+    raise ValueError(f"Files have different number of lines! {len(lines1)}, {len(lines2)}")
+
+  for sent1, sent2 in zip(lines1, lines2):
+    if sent1 != sent2:
+      diff_sents.append([sent1, sent2])
+
+  return diff_sents
 
 def compute_token_divergence(sents1, sents2):
   differing_tokens = 0

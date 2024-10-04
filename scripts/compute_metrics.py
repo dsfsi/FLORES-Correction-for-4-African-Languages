@@ -1,9 +1,8 @@
 import os
 import sys
 import argparse
-import pandas as pd
 from comet import load_from_checkpoint
-from utils import compute_metrics, compute_token_counts, compute_token_divergence
+from utils import compute_metrics, compute_token_counts, compute_token_divergence, get_different_sentences
 
 METADATA = {
   'hau': ['dev', 'devtest'],
@@ -35,20 +34,23 @@ def main():
   model = load_from_checkpoint(COMET_MODEL)
 
   src_path = f'../data/original/{split}/eng_Latn.{split}'
-  ref_path = f'../data/original/{split}/{lang_code}_Latn.{split}'
-  pred_path = f'../data/corrected/{split}/{lang_code}_Latn.{split}'
+  ref_path = f'../data/corrected/{split}/{lang_code}_Latn.{split}'
+  pred_path = f'../data/original/{split}/{lang_code}_Latn.{split}'
 
-  src = open(src_path).read().splitlines()
-  ref = open(ref_path).read().splitlines()
-  pred = open(pred_path).read().splitlines()
+  src = open(src_path, 'r').read().splitlines()
+  ref = open(ref_path, 'r').read().splitlines()
+  pred = open(pred_path, 'r').read().splitlines()
+
+  corrected_sentences = get_different_sentences(ref, pred)
+  ref = [l[0] for l in corrected_sentences]
+  pred = [l[1] for l in corrected_sentences]
 
   bleu_score, ter_score, comet_score = compute_metrics(src, ref, pred, model)
 
-  corrected_sentences = [[r, p] for r, p in zip(ref, pred) if r != p]
-  print(f'Number of corrected sentences: {len(corrected_sentences)}')
-  print(f'Token counts in original data: {compute_token_counts([l[0] for l in corrected_sentences])}')
-  print(f'Token counts in corrected data: {compute_token_counts([l[1] for l in corrected_sentences])}')
-  print(f'Token divergence: {compute_token_divergence([l[0] for l in corrected_sentences], [l[1] for l in corrected_sentences])}%')
+  print(f'Number of corrected sentences: {len(corrected_sentences)} ({len(corrected_sentences) / len(src) * 100:.1f}%)')
+  print(f'Token counts in original data: {compute_token_counts(pred)}')
+  print(f'Token counts in corrected data: {compute_token_counts(ref)}')
+  print(f'Token divergence: {compute_token_divergence(ref, pred)}%')
   
   print(f'BLEU: {bleu_score}')
   print(f'TER: {ter_score}')
