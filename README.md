@@ -49,11 +49,11 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
   <tr>
     <td>hau</td>
-    <td>538 (54.0)</td>
-    <td>15,336</td>
-    <td>15,239</td>
-    <td>97</td>
-    <td>24.3</td>
+    <td>632 (63.4)</td>
+    <td>18,073</td>
+    <td>17,948</td>
+    <td>125</td>
+    <td>23.9</td>
     <td></td>
     <td>-</td>
     <td>-</td>
@@ -91,16 +91,16 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
   <tr>
     <td>zul</td>
-    <td>192 (19.3)</td>
-    <td>3,967</td>
-    <td>3,583</td>
-    <td>384</td>
+    <td>195 (19.6)</td>
+    <td>4,052</td>
+    <td>3,667</td>
+    <td>385</td>
     <td>25.7</td>
     <td></td>
-    <td>227 (22.4)</td>
-    <td>4,430</td>
-    <td>4,423</td>
-    <td>7</td>
+    <td>228 (22.5)</td>
+    <td>4,446</td>
+    <td>4,441</td>
+    <td>5</td>
     <td>30.4</td>
   </tr>
 </table>
@@ -139,10 +139,10 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
   <tr>
     <td>hau</td>
-    <td>19.6</td>
-    <td>2,702</td>
-    <td>71.4</td>
-    <td>80.4</td>
+    <td>19.2</td>
+    <td>3,107</td>
+    <td>72.0</td>
+    <td>80.2</td>
     <td></td>
     <td>-</td>
     <td>-</td>
@@ -175,14 +175,14 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
   <tr>
     <td>zul</td>
-    <td>30.0</td>
-    <td>909</td>
-    <td>67.6</td>
+    <td>27.1</td>
+    <td>934</td>
+    <td>68.2</td>
     <td>74.7</td>
     <td></td>
-    <td>23.5</td>
-    <td>879</td>
-    <td>70.8</td>
+    <td>23.4</td>
+    <td>881</td>
+    <td>70.9</td>
     <td>75.8</td>
   </tr>
 </table>
