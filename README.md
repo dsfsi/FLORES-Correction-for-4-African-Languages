@@ -105,7 +105,7 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   </tr>
 </table>
 
-**Table:** Data statistics; #corr. (%) → number of sentences requiring at least one correction (percentage of original data); #tokens<sub>o</sub> → original token count; #tokens<sub>c</sub> → corrected token count; &Delta; tokens → token count difference; % div. → percentage of token divergence. Languages marked with * indicate corrections are still in progress.
+**Table:** Data statistics; #corr. (%) → number of sentences requiring at least one correction (percentage of original data); #tokens<sub>o</sub> → original token count; #tokens<sub>c</sub> → corrected token count; &Delta; tokens → token count difference; % div. → percentage of token divergence.
 
 <table>
   <tr>
