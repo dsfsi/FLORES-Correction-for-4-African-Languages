@@ -1,0 +1,5 @@
+nltk
+pandas
+evaluate
+transformers
+unbabel-comet
