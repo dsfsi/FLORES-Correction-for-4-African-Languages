@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 from comet import load_from_checkpoint
-from utils import compute_metrics, compute_token_counts, compute_token_divergence, get_different_sentences
+from utils import compute_metrics, compute_token_counts, compute_token_divergence, display_results, get_comet_model_path, get_different_sentences
 
 METADATA = {
   'hau': ['dev', 'devtest'],
@@ -10,7 +10,7 @@ METADATA = {
   'tso': ['devtest'],
   'zul': ['dev', 'devtest'],
 }
-COMET_MODEL = '../comet_model'
+COMET_MODEL = get_comet_model_path()
 
 def get_args():
   parser = argparse.ArgumentParser()
@@ -23,13 +23,12 @@ def main():
   lang_code = args.lang_code
   split = args.split
 
-  if not os.path.exists(COMET_MODEL):
-    sys.exit(f'COMET model not found at {COMET_MODEL}. Please use the download_comet.py script to download the model.')
+  if not COMET_MODEL:
+    sys.exit(f'COMET model not found at "../comet_model". Please download the model.')
   if split not in METADATA[lang_code]:
     sys.exit(f'{lang_code} does not have the split {split}.')
 
-  print(f'Language: {lang_code}')
-  print(f'Split: {split}')
+  print(f'COMET model: {COMET_MODEL}')
 
   model = load_from_checkpoint(COMET_MODEL)
 
@@ -47,14 +46,7 @@ def main():
 
   bleu_score, ter_score, comet_score = compute_metrics(src, ref, pred, model)
 
-  print(f'Number of corrected sentences: {len(corrected_sentences)} ({len(corrected_sentences) / len(src) * 100:.1f}%)')
-  print(f'Token counts in original data: {compute_token_counts(pred)}')
-  print(f'Token counts in corrected data: {compute_token_counts(ref)}')
-  print(f'Token divergence: {compute_token_divergence(ref, pred)}%')
-  
-  print(f'BLEU: {bleu_score}')
-  print(f'TER: {ter_score}')
-  print(f'COMET: {comet_score}')
+  display_results(lang_code, split, corrected_sentences, src, pred, ref, bleu_score, ter_score, comet_score)
 
 if __name__ == '__main__':
   main()

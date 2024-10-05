@@ -50,30 +50,30 @@ In this project, native speakers meticulously reviewed and corrected the dataset
   <tr>
     <td>hau</td>
     <td>632 (63.4)</td>
-    <td>18,073</td>
     <td>17,948</td>
+    <td>18,073</td>
     <td>125</td>
-    <td>23.9</td>
+    <td>24.7</td>
     <td></td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>70 (6.9)</td>
+    <td>2,006</td>
+    <td>1,978</td>
+    <td>28</td>
+    <td>49.2</td>
   </tr>
   <tr>
     <td>nso</td>
-    <td>62 (6.2)</td>
-    <td>2,073</td>
-    <td>2,130</td>
-    <td>57</td>
-    <td>29.8</td>
+    <td>67 (6.7)</td>
+    <td>2,226</td>
+    <td>2,271</td>
+    <td>45</td>
+    <td>28.9</td>
     <td></td>
-    <td>53 (5.2)</td>
-    <td>1,780</td>
-    <td>1,819</td>
-    <td>39</td>
-    <td>30.5</td>
+    <td>62 (6.1)</td>
+    <td>2,082</td>
+    <td>2,105</td>
+    <td>23</td>
+    <td>28.0</td>
   </tr>
   <tr>
     <td>tso</td>
@@ -83,25 +83,25 @@ In this project, native speakers meticulously reviewed and corrected the dataset
     <td>-</td>
     <td>-</td>
     <td></td>
-    <td>61 (6.0)</td>
-    <td>2,127</td>
-    <td>2,161</td>
-    <td>34</td>
-    <td>35.7</td>
+    <td>83 (6.1)</td>
+    <td>2,919</td>
+    <td>2,947</td>
+    <td>28</td>
+    <td>27.4</td>
   </tr>
   <tr>
     <td>zul</td>
-    <td>195 (19.6)</td>
-    <td>4,052</td>
-    <td>3,667</td>
-    <td>385</td>
-    <td>25.7</td>
+    <td>190 (19.1)</td>
+    <td>3,605</td>
+    <td>3,588</td>
+    <td>17</td>
+    <td>23.7</td>
     <td></td>
-    <td>228 (22.5)</td>
-    <td>4,446</td>
-    <td>4,441</td>
-    <td>5</td>
-    <td>30.4</td>
+    <td>226 (22.3)</td>
+    <td>4,414</td>
+    <td>4,396</td>
+    <td>18</td>
+    <td>31.8</td>
   </tr>
 </table>
 
@@ -142,24 +142,24 @@ In this project, native speakers meticulously reviewed and corrected the dataset
     <td>19.2</td>
     <td>3,107</td>
     <td>72.0</td>
-    <td>80.2</td>
+    <td>54.1</td>
     <td></td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>40.4</td>
+    <td>711</td>
+    <td>56.6</td>
+    <td>42.1</td>
   </tr>
   <tr>
     <td>nso</td>
-    <td>24.2</td>
-    <td>465</td>
-    <td>66.5</td>
-    <td>73.4</td>
+    <td>22.4</td>
+    <td>472</td>
+    <td>68.5</td>
+    <td>55.2</td>
     <td></td>
-    <td>24.0</td>
-    <td>392</td>
-    <td>67.7</td>
-    <td>73.5</td>
+    <td>21.2</td>
+    <td>409</td>
+    <td>71.8</td>
+    <td>55.9</td>
   </tr>
   <tr>
     <td>tso</td>
@@ -168,22 +168,22 @@ In this project, native speakers meticulously reviewed and corrected the dataset
     <td>-</td>
     <td>-</td>
     <td></td>
-    <td>28.5</td>
-    <td>541</td>
-    <td>64.8</td>
-    <td>72.9</td>
+    <td>20.9</td>
+    <td>547</td>
+    <td>73.9</td>
+    <td>58.4</td>
   </tr>
   <tr>
     <td>zul</td>
-    <td>27.1</td>
-    <td>934</td>
-    <td>68.2</td>
-    <td>74.7</td>
+    <td>17.2</td>
+    <td>524</td>
+    <td>76.3</td>
+    <td>53.0</td>
     <td></td>
-    <td>23.4</td>
-    <td>881</td>
-    <td>70.9</td>
-    <td>75.8</td>
+    <td>23.6</td>
+    <td>879</td>
+    <td>70.6</td>
+    <td>53.0</td>
   </tr>
 </table>
 
@@ -194,7 +194,7 @@ In this project, native speakers meticulously reviewed and corrected the dataset
 This repository contains the corrected version of the FLORES dataset for the four languages. You can use these corrected datasets for improved performance in evaluating machine translation and other NLP tasks for African languages.
 
 ### Accessing the Data
-- [Download corrected datasets](link-to-datasets)
+- [Download corrected datasets](https://github.com/dsfsi/flores-fix-4-africa/tree/main/data/corrected)
 
 ## Contributing
 

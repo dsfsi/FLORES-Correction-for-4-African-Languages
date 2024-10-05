@@ -1,9 +1,24 @@
+import os
+import sys
+import glob
 import evaluate
-
+from tabulate import tabulate
 from nltk import word_tokenize
+from comet import download_model
 
-bleu = evaluate.load("bleu")
-ter = evaluate.load('ter')
+def find_ckpt_files(directory):
+  ckpt_files = glob.glob(f"{directory}/**/*.ckpt", recursive=True)
+  return ckpt_files[0] if ckpt_files else None
+
+def get_comet_model_path():
+  directory = '../comet_model'
+  if not os.path.exists(directory):
+    model_path = download_model('masakhane/africomet-mtl', directory)
+  else:
+    model_path = find_ckpt_files(directory)
+    if not model_path:
+      sys.exit(f'Model checkpoint not found. Delete the "{model_path}" directory and run this file again.')
+  return model_path
 
 def get_different_sentences(lines1, lines2):
   diff_sents = []
@@ -38,6 +53,9 @@ def compute_token_counts(sents):
   return sum(len(word_tokenize(sent)) for sent in sents)
 
 def compute_metrics(src, ref, pred, model):
+  bleu = evaluate.load("bleu")
+  ter = evaluate.load('ter')
+
   references = [[l] for l in ref]
   predictions = pred
 
@@ -49,3 +67,22 @@ def compute_metrics(src, ref, pred, model):
   comet_score = model_output.system_score
 
   return bleu_score, ter_score, comet_score
+
+def display_results(lang, split, corrected_sentences, src, pred, ref, bleu_score, ter_score, comet_score):
+  tkcnto = compute_token_counts(pred)
+  tkcntc = compute_token_counts(ref)
+  data = [
+    ["Language", lang],
+    ["Split", split],
+    ["Number of corrected sentences", f"{len(corrected_sentences)} ({len(corrected_sentences) / len(src) * 100:.1f}%)"],
+    ["Token counts in original data", f"{tkcnto:,}"],
+    ["Token counts in corrected data", f"{tkcntc:,}"],
+    ["Token difference", f"{abs(tkcnto - tkcntc):,}"],
+    ["Token divergence", f"{compute_token_divergence(ref, pred)}%"],
+    ["TER", f'{ter_score["score"]:.1f}'],
+    ["TER #edits", f"{ter_score['num_edits']:,}"],
+    ["BLEU", f'{(bleu_score * 100):.1f}'],
+    ["COMET score", f'{(comet_score * 100):.1f}']
+  ]
+  
+  print(tabulate(data, headers=["Metric", "Value"], tablefmt="pretty", colalign=("left", "left")))
